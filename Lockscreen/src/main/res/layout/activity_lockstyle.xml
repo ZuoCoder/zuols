@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zuo="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_bright"
+        android:text="锁定方式"/>
+
+    <com.rcplatform.rclockscreen.view.CheckedRelativeLayout
+        android:id="@+id/crl_lockstyle_nopwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:selected="true"
+        zuo:content="无密码">
+    </com.rcplatform.rclockscreen.view.CheckedRelativeLayout>
+
+    <com.rcplatform.rclockscreen.view.CheckedRelativeLayout
+        android:id="@+id/crl_lockstyle_pinpwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="PIN码">
+    </com.rcplatform.rclockscreen.view.CheckedRelativeLayout>
+
+    <com.rcplatform.rclockscreen.view.CheckedRelativeLayout
+        android:id="@+id/crl_lockstyle_picpwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="图案密码">
+    </com.rcplatform.rclockscreen.view.CheckedRelativeLayout>
+
+    <com.rcplatform.rclockscreen.view.CheckedRelativeLayout
+        android:id="@+id/crl_lockstyle_numpwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="数字密码">
+    </com.rcplatform.rclockscreen.view.CheckedRelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_bright"
+        android:text="锁定方式设置"/>
+
+    <com.rcplatform.rclockscreen.view.CheckedRelativeLayout
+        android:id="@+id/crl_lockstyle_pathvisiable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:selected="true"
+        zuo:content="绘制的图案可见">
+    </com.rcplatform.rclockscreen.view.CheckedRelativeLayout>
+
+    <com.rcplatform.rclockscreen.view.CheckedRelativeLayout
+        android:id="@+id/crl_lockstyle_pwdunlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="密码解锁">
+    </com.rcplatform.rclockscreen.view.CheckedRelativeLayout>
+
+</LinearLayout>

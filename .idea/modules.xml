@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LibMarsdaemon/LibMarsdaemon.iml" filepath="$PROJECT_DIR$/LibMarsdaemon/LibMarsdaemon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lockscreen/Lockscreen.iml" filepath="$PROJECT_DIR$/Lockscreen/Lockscreen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RCLockScreen.iml" filepath="$PROJECT_DIR$/RCLockScreen.iml" />
+    </modules>
+  </component>
+</project>

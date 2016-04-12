@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rcplatform.rclockscreen" >
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:name=".application.MyApplication1"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".ui.MainActivity"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".services.Service1"
+            android:process=":process1" />
+
+        <receiver
+            android:name=".receivers.Receiver1"
+            android:process=":process1" />
+
+        <service
+            android:name=".services.Service2"
+            android:process=":process2" />
+
+        <receiver
+            android:name=".receivers.Receiver2"
+            android:process=":process2" />
+
+        <receiver android:name=".receivers.BootCompletedReciver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".services.NotificationMonitor"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".ui.BaseActivity" />
+        <activity
+            android:name=".ui.BaseLockActivity"
+            android:launchMode="singleInstance" />
+        <activity android:name=".ui.PicLockActivity"
+            android:launchMode="singleInstance"/>
+        <activity android:name=".ui.NumLockActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:launchMode="singleInstance"/>
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity android:name=".ui.LockPluginsActivity"/>
+        <activity android:name=".ui.LockStylesActivity"/>
+        <activity android:name=".ui.PicPwdActivity"/>
+        <activity android:name=".ui.NumPwdActivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"/>
+    </application>
+
+</manifest>

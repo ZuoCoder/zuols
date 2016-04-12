@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zuo="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.rcplatform.rclockscreen.view.SwitchRelativeLayout
+        android:id="@+id/srl_lockplugins_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="日期"
+        />
+
+    <com.rcplatform.rclockscreen.view.SwitchRelativeLayout
+        android:id="@+id/srl_lockplugins_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="时间"
+        />
+    <RadioGroup
+        android:id="@+id/rg_lockplugins_timehour"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rg_lockplugins_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12h"/>
+        <RadioButton
+            android:id="@+id/rg_lockplugins_two"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24h"/>
+    </RadioGroup>
+
+    <com.rcplatform.rclockscreen.view.SwitchRelativeLayout
+        android:id="@+id/srl_lockplugins_week"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="星期"
+        />
+    <com.rcplatform.rclockscreen.view.SwitchRelativeLayout
+        android:id="@+id/srl_lockplugins_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="天气"
+        />
+</LinearLayout>

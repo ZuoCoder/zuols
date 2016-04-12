@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zuo="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_bright"
+        android:text="消息设置"/>
+
+    <com.rcplatform.rclockscreen.view.SwitchRelativeLayout
+        android:id="@+id/srl_msg_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="消息提醒开关"
+        zuo:selected="false"
+        />
+
+    <com.rcplatform.rclockscreen.view.SelectItemRelativeLayout
+        android:id="@+id/sirl_chose_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="选择应用程序"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_bright"
+        android:text="个性化设置"/>
+
+    <com.rcplatform.rclockscreen.view.SelectItemRelativeLayout
+        android:id="@+id/sirl_lockscreen_plugins"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="锁屏插件"/>
+
+    <com.rcplatform.rclockscreen.view.SelectItemRelativeLayout
+        android:id="@+id/sirl_lockscreen_styles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        zuo:content="屏幕锁定方式"/>
+</LinearLayout>

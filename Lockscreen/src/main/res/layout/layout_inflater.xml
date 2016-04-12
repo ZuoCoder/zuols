@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_battery_num"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:textSize="20sp"
+        android:textColor="#FFF"
+        android:text="100%"/>
+
+    <ProgressBar
+        android:id="@+id/pb_battery_icon"
+        android:layout_toLeftOf="@id/tv_battery_num"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_time"
+        android:padding="20dp"
+        android:layout_marginTop="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:textSize="50dp"
+            android:text="time"/>
+
+        <ImageView
+            android:id="@+id/tv_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_time"
+            android:layout_marginLeft="20dp"
+            android:src="@mipmap/ic_launcher"
+            />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:layout_below="@id/tv_time"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:text="date"/>
+
+        <TextView
+            android:id="@+id/tv_week"
+            android:layout_toRightOf="@id/tv_date"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF"
+            android:layout_below="@id/tv_time"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:text="week"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@id/rl_time"
+        android:id="@+id/ll_notify_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    </LinearLayout>
+
+    <TextView
+        android:padding="5dp"
+        android:background="#FFF"
+        android:textColor="#000"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/btn_unlock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="滑动解锁"/>
+</RelativeLayout>
