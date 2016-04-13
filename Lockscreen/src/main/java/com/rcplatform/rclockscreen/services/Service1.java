@@ -1,12 +1,16 @@
 package com.rcplatform.rclockscreen.services;
 
 import android.app.KeyguardManager;
+import android.app.Notification;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.IBinder;
+import android.os.Message;
 import android.util.Log;
 
 import com.marswin89.marsdaemon.SharedPreferenceUtils;
@@ -32,7 +36,6 @@ public class Service1 extends Service {
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         reciver = new UnLockScreenReciver();
         registerReceiver(reciver, filter);
-
     }
 
     @Override

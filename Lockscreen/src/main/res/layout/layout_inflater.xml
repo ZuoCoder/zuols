@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/bg"
+    android:descendantFocusability="blocksDescendants"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -71,14 +72,6 @@
             android:text="week"/>
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_below="@id/rl_time"
-        android:id="@+id/ll_notify_msg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-    </LinearLayout>
-
     <TextView
         android:padding="5dp"
         android:background="#FFF"
@@ -90,4 +83,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="滑动解锁"/>
+
+    <ListView
+        android:layout_below="@id/rl_time"
+        android:id="@+id/ll_notify_msg"
+        android:layout_above="@id/btn_unlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    </ListView>
 </RelativeLayout>

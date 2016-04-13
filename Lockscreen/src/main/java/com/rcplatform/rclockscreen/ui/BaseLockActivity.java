@@ -7,18 +7,21 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.service.notification.StatusBarNotification;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
 import com.marswin89.marsdaemon.SharedPreferenceUtils;
 import com.rcplatform.rclockscreen.R;
+import com.rcplatform.rclockscreen.services.NotificationMonitor;
 import com.rcplatform.rclockscreen.utils.Constant;
 import com.rcplatform.rclockscreen.utils.MyDateUtils;
 import com.rcplatform.rclockscreen.view.LockLayer;
@@ -38,6 +41,13 @@ public class BaseLockActivity extends BaseActivity{
     private BatteryReciver batteryReciver;
     private View slideView = null;//滑动解锁
     private View pwdView = null;//密码解锁
+
+    private static final int EVENT_SHOW_CREATE_NOS = 0;
+    private static final int EVENT_LIST_CURRENT_NOS = 1;
+    private static final String ENABLED_NOTIFICATION_LISTENERS = "enabled_notification_listeners";
+    private static final String ACTION_NOTIFICATION_LISTENER_SETTINGS = "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS";
+    private boolean isEnabledNLS = false;
+    private TextView mTextView;
 
     private TextView time;
     private TextView tv_date;
@@ -70,6 +80,7 @@ public class BaseLockActivity extends BaseActivity{
             }
         }
     };
+    private ListView lv_notification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,6 +122,11 @@ public class BaseLockActivity extends BaseActivity{
         tv_date.setVisibility(SharedPreferenceUtils.getBoolean(this, Constant.LOCKPLUGINS_DATE,true)?View.VISIBLE:View.INVISIBLE);
         tv_week.setVisibility(SharedPreferenceUtils.getBoolean(this, Constant.LOCKPLUGINS_WEEK,true)?View.VISIBLE:View.INVISIBLE);
         weather.setVisibility(SharedPreferenceUtils.getBoolean(this, Constant.LOCKPLUGINS_WEATHER,true)?View.VISIBLE:View.INVISIBLE);
+        if(SharedPreferenceUtils.getBoolean(this,Constant.MSG_REMIND,false)){
+            StatusBarNotification[] notifications = NotificationMonitor.getCurrentNotifications();
+            NotifycationAdapter adapter = new NotifycationAdapter(notifications);
+            lv_notification.setAdapter(adapter);
+        }
     }
 
     private void getNewTime() {
@@ -167,6 +183,7 @@ public class BaseLockActivity extends BaseActivity{
         tv_week = (TextView) view.findViewById(R.id.tv_week);
         batteryNum = (TextView) view.findViewById(R.id.tv_battery_num);
         weather = (ImageView) view.findViewById(R.id.tv_weather);
+        lv_notification = (ListView) view.findViewById(R.id.ll_notify_msg);
         Date initdate = new Date();
         time.setText(MyDateUtils.getChangeTimeFormat(initdate));
         tv_date.setText(MyDateUtils.getChangeDateFormat(initdate));

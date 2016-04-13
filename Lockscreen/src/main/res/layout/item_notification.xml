@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_centerVertical="true"
+        android:id="@+id/item_notify_icon"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:src="@mipmap/ic_launcher"
+        />
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/item_notify_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_notify_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通知"/>
+
+        <TextView
+            android:id="@+id/item_notify_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="通知内容"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/item_notify_time"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="time"/>
+</RelativeLayout>
